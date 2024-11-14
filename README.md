@@ -1,5 +1,5 @@
 # Kaltext
-A terminal application to manage events and scedule (German).
+A terminal application to manage events and scedule (German). It is written in bash and saves the data into text files.
 
 # Usage
 | Command | |
