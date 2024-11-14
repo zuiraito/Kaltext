@@ -1,5 +1,5 @@
 # Kaltext
-A terminal application to manage events and scedjule (German).
+A terminal application to manage events and scedule (German).
 
 # Usage
 | Command | |
@@ -21,4 +21,4 @@ cat Kaltext/addToBashRC >> ~/.bash.rc
 If the Kaltext directory is not in the ~/ directory, the "kalender_path" variable in the bash.rc has to be changed.
 
 # Syncing
-The ~/Kaltext directory can be synced to other devices using [syncthing](https://github.com/syncthing/syncthing) to other devices and even moblie when running a terminal emulator like terminux.
+The ~/Kaltext directory can be synced to other devices using [syncthing](https://github.com/syncthing/syncthing) to other devices and even mobile when running a terminal emulator like terminux.
