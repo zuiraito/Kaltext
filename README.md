@@ -12,8 +12,7 @@ A terminal application to manage events and scedule (German). It is written in b
 
 # Installation
 ```
-git clone https://github.com/zuiraito/Kaltext
-chmod +x Kalrtext/open_week.sh
+git clone https://github.com/zuiraito/Kaltext && chmod +x Kaltext/open_week.sh
 ```
 To make the commands executable from any directory in the terminal, some lines need to be added to the bashrc
 ```
