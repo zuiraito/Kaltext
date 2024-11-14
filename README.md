@@ -3,7 +3,7 @@ A terminal application to manage events and scedule (German).
 
 # Usage
 | Command | |
-| -- | |
+| -- | --|
 |t| display open tasks with corresponding week number|
 |tag |display plans for the day |
 |woche |display plans for the week |
