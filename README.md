@@ -14,9 +14,9 @@ A terminal application to manage events and scedule (German). It is written in b
 ```
 git clone https://github.com/zuiraito/Kaltext
 ```
-To make the commands executable from any directory in the terminal, some lines need to be added to the bash.rc
+To make the commands executable from any directory in the terminal, some lines need to be added to the bashrc
 ```
-cat Kaltext/addToBashRC >> ~/.bash.rc
+cat Kaltext/addToBashRC >> ~/.bashrc
 ```
 If the Kaltext directory is not in the ~/ directory, the "kalender_path" variable in the bash.rc has to be changed.
 
