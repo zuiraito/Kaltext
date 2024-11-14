@@ -1,0 +1,38 @@
+# Kaltext
+kalender_path=~/Kaltext
+alias t="grep -H '( )' $kalender_path/* | sed 's|^[^w]*w||'"
+function whyDoesJustTagNotWorkIhaveToSetAnAliasNowTag() {
+    weekday=$(date +%A)
+    year=$(date +%y); week=$(date +%V); week=$(printf "%02d" $week)
+    case "$weekday" in
+      "Monday") weekday="Montag" ;; "Tuesday") weekday="Dienstag" ;; "Wednesday") weekday="Mittwoch" ;; "Thursday") weekday="Donnerstag" ;; "Friday") weekday="Freitag" ;; "Saturday") weekday="Samstag" ;; "Sunday") weekday="Sonntag" ;; *) weekday="" ;;
+    esac
+    awk -v pattern="$weekday" '($0 ~ pattern) {found=1} found && /┌/ {exit} found' $kalender_path/${year}w${week} 
+}
+alias tag='whyDoesJustTagNotWorkIhaveToSetAnAliasNowTag'
+woche() {
+    year=$(date +%y); week=$(date +%V); week=$(printf "%02d" $week)
+    cat $kalender_path/${year}w${week}
+}
+wochen() {
+    if [ -z "$1" ]; then
+        echo "Syntax: wochen {anzahl}"
+        return 1  # Exit the function with an error status
+    fi
+    year=$(date +%y); week=$(date +%V); week=$(printf "%02d" $week)
+    for ((i = 1; i <= $1; i++))
+    do
+        [ -e $kalender_path/${year}w${week} ] && cat $kalender_path/${year}w${week}
+        week=$(($week+1))
+	if [ $week -gt 52 ]; then
+	    week=0
+	    year=$(($year+1))
+        fi
+    done
+}
+function whyDoesJustTerminNotWorkIhaveToSetAnAliasNowTermin() {
+  local current_dir=$(pwd)
+  cd $kalender_path && ./open_week.sh "$@"
+  cd "$current_dir"
+}
+alias termin='whyDoesJustTerminNotWorkIhaveToSetAnAliasNowTermin'
